@@ -496,6 +496,9 @@ read_report <- function(myfile, has_header=NULL, check_file = FALSE) {
     allowed_taxRanks <- c("U", "S", "G", "F", "F1", "F2", "F3", "C", "D", "O", "K", "P")
     report$taxRank[report$taxRank=="class"] <- "C"
     report$taxRank[report$taxRank=="family"] <- "F"
+    report$taxRank[report$taxRank=="f1"] <- "F1"
+    report$taxRank[report$taxRank=="f2"] <- "F2"
+    report$taxRank[report$taxRank=="f3"] <- "F3"
     report$taxRank[report$taxRank=="genus"] <- "G"
     report$taxRank[report$taxRank=="superkingdom"] <- "D"
     report$taxRank[report$taxRank=="kingdom"] <- "K"
