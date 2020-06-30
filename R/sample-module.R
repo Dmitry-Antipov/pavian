@@ -5,8 +5,8 @@ library(magrittr)
 
 
 ## TODOL Make Sankey work for '-' taxRanks
-tax_taxRanks <- c("D","K","P","C","O","F","G","S")
-tax_taxRank_names <- c("D"="Domain","K"="Kingdom","P"="Phylum","C"="Clade","O"="Order","F"="Family","G"="Genus","S"="Species", "-"="-", "T"="Strain")
+tax_taxRanks <- c("D","K","P","C","O","F","F1","F2","F3","G","S")
+tax_taxRank_names <- c("D"="Domain","K"="Kingdom","P"="Phylum","C"="Clade","O"="Order","F"="Family","F1"="F1","F2"="Group","F3=Subgroup","G"="Genus","S"="Species", "-"="-", "T"="Strain")
 
 figure_options <- function(ns) {
   shiny::tagList(checkboxGroupInput(ns("taxRanks"),"Taxonomical ranks to display",tax_taxRanks,setdiff(tax_taxRanks,c("O","C","-")), inline = TRUE),
