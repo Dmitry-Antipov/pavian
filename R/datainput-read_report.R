@@ -159,7 +159,7 @@ delete_taxRanks_below <- function(report,taxRank="S") {
 #' @return report data.frame
 #' @export
 #'
-read_report2 <- function(myfile,collapse=TRUE,keep_taxRanks=c("D","K","P","C","O","F","G","S"),min.depth=0,filter_taxon=NULL,
+read_report2 <- function(myfile,collapse=TRUE,keep_taxRanks=c("D","K","P","C","O","F","F1","F2","F3","G","S"),min.depth=0,filter_taxon=NULL,
                          has_header=NULL,add_taxRank_columns=FALSE) {
 
   first.line <- readLines(myfile,n=1)
@@ -493,7 +493,7 @@ read_report <- function(myfile, has_header=NULL, check_file = FALSE) {
 
     ## 'fix' taxRank
     table(report$taxRank)
-    allowed_taxRanks <- c("U", "S", "G", "F", "C", "D", "O", "K", "P")
+    allowed_taxRanks <- c("U", "S", "G", "F", "F1", "F2", "F3", "C", "D", "O", "K", "P")
     report$taxRank[report$taxRank=="class"] <- "C"
     report$taxRank[report$taxRank=="family"] <- "F"
     report$taxRank[report$taxRank=="genus"] <- "G"
