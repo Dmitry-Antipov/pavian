@@ -506,7 +506,7 @@ read_report <- function(myfile, has_header=NULL, check_file = FALSE) {
     report$taxRank[report$taxRank=="phylum"] <- "P"
     report$taxRank[report$taxRank=="species"] <- "S"
     report$taxRank[report$name=="unclassified"] <- "U"
-    report$taxRank[!report$taxRank %in% allowed_taxRanks] <- "-"
+##    report$taxRank[!report$taxRank %in% allowed_taxRanks] <- "-"
 
     report$name <- paste(tolower(report$taxRank),report$name,sep="_")
 
